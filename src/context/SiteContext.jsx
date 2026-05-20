@@ -122,7 +122,7 @@ export const SiteProvider = ({ children }) => {
     return false;
   };
 
-  const changePassword = (oldPassword, newPassword) => {
+  const changePassword = async (oldPassword, newPassword) => {
     if (oldPassword !== credentials.password) {
       return { success: false, error: 'كلمة المرور القديمة غير صحيحة' };
     }

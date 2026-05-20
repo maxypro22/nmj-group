@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useSiteContext } from '../context/SiteContext';
 
 const Dashboard = () => {
-  const { siteData, updateSiteData, messages, deleteMessage, resetToDefaults } = useSiteContext();
+  const { siteData, updateSiteData, messages, deleteMessage, resetToDefaults, changePassword } = useSiteContext();
   const [activeTab, setActiveTab] = useState('messages');
+
+  // Password change state
+  const [pwForm, setPwForm] = useState({ oldPassword: '', newPassword: '', confirmPassword: '' });
+  const [pwStatus, setPwStatus] = useState({ type: '', message: '' });
+  const [showPw, setShowPw] = useState({ old: false, new: false, confirm: false });
   
   // Clone the siteData deeply to avoid direct mutation
   const [formData, setFormData] = useState(JSON.parse(JSON.stringify(siteData)));
@@ -37,6 +42,26 @@ const Dashboard = () => {
       setSaveStatus('Site reset to default content.');
       setTimeout(() => setSaveStatus(''), 4000);
     }
+  };
+
+  const handlePasswordChange = (e) => {
+    e.preventDefault();
+    if (pwForm.newPassword.length < 4) {
+      setPwStatus({ type: 'error', message: 'كلمة المرور الجديدة يجب أن تكون 4 أحرف على الأقل' });
+      return;
+    }
+    if (pwForm.newPassword !== pwForm.confirmPassword) {
+      setPwStatus({ type: 'error', message: 'كلمة المرور الجديدة وتأكيدها غير متطابقين' });
+      return;
+    }
+    const result = changePassword(pwForm.oldPassword, pwForm.newPassword);
+    if (result.success) {
+      setPwStatus({ type: 'success', message: 'تم تغيير كلمة المرور بنجاح!' });
+      setPwForm({ oldPassword: '', newPassword: '', confirmPassword: '' });
+    } else {
+      setPwStatus({ type: 'error', message: result.error });
+    }
+    setTimeout(() => setPwStatus({ type: '', message: '' }), 4000);
   };
 
   // Card style helpers
@@ -91,6 +116,12 @@ const Dashboard = () => {
             style={{ padding: '10px 20px', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: '500', background: activeTab === 'cms' ? '#111827' : '#e5e7eb', color: activeTab === 'cms' ? 'white' : '#374151' }}
           >
             Site Editor
+          </button>
+          <button 
+            onClick={() => setActiveTab('password')}
+            style={{ padding: '10px 20px', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: '500', background: activeTab === 'password' ? '#111827' : '#e5e7eb', color: activeTab === 'password' ? 'white' : '#374151' }}
+          >
+            🔒 Change Password
           </button>
         </div>
       </div>
@@ -242,6 +273,80 @@ const Dashboard = () => {
                 Publish Changes (نشر)
               </button>
             </div>
+          </form>
+        </div>
+      )}
+      {activeTab === 'password' && (
+        <div style={{...cardStyle, maxWidth: '480px'}}>
+          <h2 style={{ fontSize: '1.5rem', color: '#111827', marginBottom: '25px' }}>🔒 Change Password</h2>
+
+          {pwStatus.message && (
+            <div style={{ padding: '12px 16px', borderRadius: '6px', marginBottom: '20px', fontWeight: '500', background: pwStatus.type === 'success' ? '#dcfce7' : '#fee2e2', color: pwStatus.type === 'success' ? '#166534' : '#b91c1c', borderLeft: `4px solid ${pwStatus.type === 'success' ? '#16a34a' : '#ef4444'}` }}>
+              {pwStatus.type === 'success' ? '✓ ' : '✕ '}{pwStatus.message}
+            </div>
+          )}
+
+          <form onSubmit={handlePasswordChange}>
+            {/* Old Password */}
+            <div style={{ marginBottom: '18px' }}>
+              <label style={labelStyle}>كلمة المرور القديمة</label>
+              <div style={{ position: 'relative' }}>
+                <input
+                  type={showPw.old ? 'text' : 'password'}
+                  value={pwForm.oldPassword}
+                  onChange={(e) => setPwForm(p => ({...p, oldPassword: e.target.value}))}
+                  required
+                  style={{...inputStyle, paddingRight: '40px'}}
+                  placeholder="أدخل كلمة المرور الحالية"
+                />
+                <button type="button" onClick={() => setShowPw(p => ({...p, old: !p.old}))} style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280' }}>
+                  {showPw.old ? '🙈' : '👁️'}
+                </button>
+              </div>
+            </div>
+
+            {/* New Password */}
+            <div style={{ marginBottom: '18px' }}>
+              <label style={labelStyle}>كلمة المرور الجديدة</label>
+              <div style={{ position: 'relative' }}>
+                <input
+                  type={showPw.new ? 'text' : 'password'}
+                  value={pwForm.newPassword}
+                  onChange={(e) => setPwForm(p => ({...p, newPassword: e.target.value}))}
+                  required
+                  style={{...inputStyle, paddingRight: '40px'}}
+                  placeholder="أدخل كلمة المرور الجديدة"
+                />
+                <button type="button" onClick={() => setShowPw(p => ({...p, new: !p.new}))} style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280' }}>
+                  {showPw.new ? '🙈' : '👁️'}
+                </button>
+              </div>
+            </div>
+
+            {/* Confirm Password */}
+            <div style={{ marginBottom: '28px' }}>
+              <label style={labelStyle}>تأكيد كلمة المرور الجديدة</label>
+              <div style={{ position: 'relative' }}>
+                <input
+                  type={showPw.confirm ? 'text' : 'password'}
+                  value={pwForm.confirmPassword}
+                  onChange={(e) => setPwForm(p => ({...p, confirmPassword: e.target.value}))}
+                  required
+                  style={{...inputStyle, paddingRight: '40px', borderColor: pwForm.confirmPassword && pwForm.newPassword !== pwForm.confirmPassword ? '#ef4444' : '#d1d5db'}}
+                  placeholder="أعد كتابة كلمة المرور الجديدة"
+                />
+                <button type="button" onClick={() => setShowPw(p => ({...p, confirm: !p.confirm}))} style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280' }}>
+                  {showPw.confirm ? '🙈' : '👁️'}
+                </button>
+              </div>
+              {pwForm.confirmPassword && pwForm.newPassword !== pwForm.confirmPassword && (
+                <p style={{ color: '#ef4444', fontSize: '13px', marginTop: '5px' }}>كلمتا المرور غير متطابقتين</p>
+              )}
+            </div>
+
+            <button type="submit" style={{ width: '100%', padding: '12px', backgroundColor: '#1e3e62', color: 'white', border: 'none', borderRadius: '6px', fontSize: '1rem', fontWeight: '600', cursor: 'pointer' }}>
+              تغيير كلمة المرور
+            </button>
           </form>
         </div>
       )}

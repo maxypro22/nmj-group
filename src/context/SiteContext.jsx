@@ -49,6 +49,15 @@ export const SiteProvider = ({ children }) => {
     return sessionStorage.getItem('nmj_auth') === 'true';
   });
 
+  const [credentials, setCredentials] = useState(() => {
+    const saved = localStorage.getItem('nmj_credentials');
+    return saved ? JSON.parse(saved) : { email: 'admin@nmj.com', password: 'admin' };
+  });
+
+  useEffect(() => {
+    localStorage.setItem('nmj_credentials', JSON.stringify(credentials));
+  }, [credentials]);
+
   const [loading, setLoading] = useState(true);
 
   // Load data from Supabase on mount (if configured)
@@ -99,11 +108,19 @@ export const SiteProvider = ({ children }) => {
   }, [isAuthenticated]);
 
   const login = (email, password) => {
-    if (email === 'admin@nmj.com' && password === 'admin') {
+    if (email === credentials.email && password === credentials.password) {
       setIsAuthenticated(true);
       return true;
     }
     return false;
+  };
+
+  const changePassword = (oldPassword, newPassword) => {
+    if (oldPassword !== credentials.password) {
+      return { success: false, error: 'كلمة المرور القديمة غير صحيحة' };
+    }
+    setCredentials(prev => ({ ...prev, password: newPassword }));
+    return { success: true };
   };
 
   const logout = () => {
@@ -163,7 +180,7 @@ export const SiteProvider = ({ children }) => {
   };
 
   return (
-    <SiteContext.Provider value={{ siteData, updateSiteData, messages, addMessage, deleteMessage, resetToDefaults, isAuthenticated, login, logout, loading }}>
+    <SiteContext.Provider value={{ siteData, updateSiteData, messages, addMessage, deleteMessage, resetToDefaults, isAuthenticated, login, logout, loading, changePassword }}>
       {children}
     </SiteContext.Provider>
   );

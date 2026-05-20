@@ -102,9 +102,9 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
-        <h1 style={{ fontSize: '2rem', color: '#111827', margin: 0 }}>Dashboard Overview</h1>
-        <div style={{ display: 'flex', gap: '10px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', flexWrap: 'wrap', gap: '15px' }}>
+        <h1 style={{ fontSize: '1.6rem', color: '#111827', margin: 0 }}>Dashboard Overview</h1>
+        <div className="dashboard-tabs">
           <button 
             onClick={() => setActiveTab('messages')}
             style={{ padding: '10px 20px', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: '500', background: activeTab === 'messages' ? '#111827' : '#e5e7eb', color: activeTab === 'messages' ? 'white' : '#374151' }}
@@ -121,7 +121,7 @@ const Dashboard = () => {
             onClick={() => setActiveTab('password')}
             style={{ padding: '10px 20px', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: '500', background: activeTab === 'password' ? '#111827' : '#e5e7eb', color: activeTab === 'password' ? 'white' : '#374151' }}
           >
-            🔒 Change Password
+            🔒 Password
           </button>
         </div>
       </div>
@@ -140,7 +140,7 @@ const Dashboard = () => {
               No messages yet. Submissions from the Contact form will appear here.
             </div>
           ) : (
-            <div style={{ overflowX: 'auto' }}>
+            <div className="dashboard-table-wrapper">
               <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
                 <thead>
                   <tr style={{ borderBottom: '2px solid #e5e7eb' }}>
@@ -183,7 +183,7 @@ const Dashboard = () => {
             
             {/* Theme Settings */}
             <h3 style={{...sectionHeadingStyle, marginTop: 0}}>Theme & Branding</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div className="dashboard-color-grid">
               <div>
                 <label style={labelStyle}>Primary Color</label>
                 <div style={{ display: 'flex', gap: '10px' }}>

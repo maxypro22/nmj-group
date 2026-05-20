@@ -1490,3 +1490,57 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================
+   Dashboard Responsive Styles
+   ========================================= */
+
+/* Dashboard tabs - wrap on small screens */
+.dashboard-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Dashboard table - horizontal scroll on mobile */
+.dashboard-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Dashboard color grid - 2 cols on desktop, 1 col on mobile */
+.dashboard-color-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-color-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-tabs {
+    gap: 8px;
+  }
+
+  .dashboard-tabs button {
+    font-size: 13px !important;
+    padding: 8px 12px !important;
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Login page */
+  .login-box {
+    margin: 20px;
+    padding: 30px 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-tabs button {
+    font-size: 12px !important;
+    padding: 7px 10px !important;
+  }
+}

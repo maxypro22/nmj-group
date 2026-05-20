@@ -75,7 +75,14 @@ export const SiteProvider = ({ children }) => {
           .eq('id', 1)
           .single();
         if (contentRow && contentRow.data && Object.keys(contentRow.data).length > 0) {
-          setSiteData(contentRow.data);
+          const { _admin, ...siteOnly } = contentRow.data;
+          // Load credentials from Supabase if they exist
+          if (_admin && _admin.email && _admin.password) {
+            setCredentials({ email: _admin.email, password: _admin.password });
+          }
+          if (Object.keys(siteOnly).length > 0) {
+            setSiteData(siteOnly);
+          }
         }
 
         // Load messages
@@ -119,7 +126,19 @@ export const SiteProvider = ({ children }) => {
     if (oldPassword !== credentials.password) {
       return { success: false, error: 'كلمة المرور القديمة غير صحيحة' };
     }
-    setCredentials(prev => ({ ...prev, password: newPassword }));
+    const newCreds = { ...credentials, password: newPassword };
+    setCredentials(newCreds);
+    // Save updated credentials to Supabase so all devices stay in sync
+    if (isSupabaseConfigured()) {
+      try {
+        const { data: contentRow } = await supabase.from('site_content').select('data').eq('id', 1).single();
+        const currentData = contentRow?.data || {};
+        const { _admin: _, ...siteOnly } = currentData;
+        await supabase.from('site_content').update({ data: { ...siteOnly, _admin: newCreds } }).eq('id', 1);
+      } catch (err) {
+        console.warn('Supabase credentials update failed:', err);
+      }
+    }
     return { success: true };
   };
 
@@ -132,7 +151,8 @@ export const SiteProvider = ({ children }) => {
     setSiteData(newData);
     if (isSupabaseConfigured()) {
       try {
-        await supabase.from('site_content').update({ data: newData }).eq('id', 1);
+        // Always preserve the _admin block so credentials stay in Supabase
+        await supabase.from('site_content').update({ data: { ...newData, _admin: credentials } }).eq('id', 1);
       } catch (err) {
         console.warn('Supabase update failed:', err);
       }
@@ -172,7 +192,8 @@ export const SiteProvider = ({ children }) => {
     setSiteData(defaultContent);
     if (isSupabaseConfigured()) {
       try {
-        await supabase.from('site_content').update({ data: defaultContent }).eq('id', 1);
+        // Preserve credentials when resetting content
+        await supabase.from('site_content').update({ data: { ...defaultContent, _admin: credentials } }).eq('id', 1);
       } catch (err) {
         console.warn('Supabase reset failed:', err);
       }

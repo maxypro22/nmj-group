@@ -93,6 +93,9 @@ const Divisions = () => {
                       <span>Doha, Qatar</span>
                     </div>
                   </div>
+                  <div className="company-card-links">
+                    <a href="https://steaktown.qa/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -133,6 +136,9 @@ const Divisions = () => {
                     <span className="company-card-badge">Contracting</span>
                   </div>
                   <p className="company-card-text">Delivering high-quality construction projects, structural development, and reliable engineering solutions for commercial and residential needs.</p>
+                  <div className="company-card-links">
+                    <a href="https://alemara.qa/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -153,6 +159,9 @@ const Divisions = () => {
                     <span className="company-card-badge">Event Management</span>
                   </div>
                   <p className="company-card-text">Executing unforgettable weddings and luxury corporate events with high creative precision, elegant designs, and seamless logistics.</p>
+                  <div className="company-card-links">
+                    <a href="https://alanaka.qa/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -173,6 +182,9 @@ const Divisions = () => {
                     <span className="company-card-badge">Cleaning Services</span>
                   </div>
                   <p className="company-card-text">Providing certified professionals for residential, office, and hospitality cleaning solutions, ensuring hygiene and dependable service.</p>
+                  <div className="company-card-links">
+                    <a href="https://dania-maids.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1417,6 +1417,25 @@ textarea.form-control {
   .hero-visual {
     height: 350px;
   }
+  .hero-doha-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 90%;
+    height: 90%;
+    gap: 12px;
+  }
+  .grid-block-span-2 {
+    grid-column: auto;
+  }
+  .grid-block-row-span-2 {
+    grid-row: auto;
+  }
+  .grid-block .block-label {
+    font-size: 0.85rem;
+  }
+  .grid-block .block-icon {
+    font-size: 1.3rem;
+  }
   .snapshot-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1488,6 +1507,17 @@ textarea.form-control {
   }
   .grid-4, .contact-info-grid, .expansion-grid {
     grid-template-columns: 1fr;
+  }
+  .hero-doha-grid {
+    width: 95%;
+    height: 95%;
+    gap: 10px;
+  }
+  .grid-block {
+    padding: 12px;
+  }
+  .grid-block .block-label {
+    font-size: 0.75rem;
   }
 }
 

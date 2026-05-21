@@ -10,7 +10,7 @@ const defaultContent = {
   },
   home: {
     heroH1: "NMJ Group: Delivering Excellence Across Diversified Industries",
-    heroP: "A premier diversified business group based in Doha, Qatar, providing integrated solutions across Hospitality, Real Estate, Construction, Events, Services, Technology, and Artificial Intelligence.",
+    heroP: "A diversified business group based in Doha, Qatar, providing integrated solutions across Hospitality, Real Estate, Construction, Events, Services, Technology, and AI.",
     section1Title: "Our Strategic Foundation",
     section1Desc: "A unified vision steering our growth and client commitment across all Qatari business sectors."
   },

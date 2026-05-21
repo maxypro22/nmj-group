@@ -57,7 +57,7 @@ const Home = () => {
               <div className="snapshot-icon">💼</div>
               <div className="snapshot-info">
                 <h3>Core Sectors</h3>
-                <p>7 Interlinked Industries</p>
+                <p style={{ fontSize: '0.9rem' }}>Hospitality, Real Estate, Construction, Events, Services, Technology, and AI</p>
               </div>
             </div>
             <div className="snapshot-card reveal" style={{ transitionDelay: '0.2s' }}>
@@ -81,20 +81,20 @@ const Home = () => {
           <div className="identity-grid">
             <div className="identity-card reveal">
               <h3><span>👁️</span> Vision</h3>
-              <p>To be a leading diversified group in Qatar and the wider region, recognized for pioneering innovation, unmatched operational quality, and sustainable corporate development.</p>
+              <p>To be a leading diversified group in Qatar and the region.</p>
             </div>
             <div className="identity-card reveal" style={{ transitionDelay: '0.1s' }}>
               <h3><span>🚀</span> Mission</h3>
-              <p>To deliver high-quality services and innovative, future-proof solutions across our business sectors, fostering strong trust and value for our customers, partners, and community.</p>
+              <p>To deliver high-quality services and innovative solutions across our business sectors.</p>
             </div>
             <div className="identity-card reveal" style={{ transitionDelay: '0.2s' }}>
               <h3><span>💎</span> Core Values</h3>
               <ul>
-                <li>Integrity in Action</li>
-                <li>Excellence in Standards</li>
-                <li>Customer-Centric Focus</li>
-                <li>Constant Innovation</li>
-                <li>Unified Teamwork</li>
+                <li>Integrity</li>
+                <li>Excellence</li>
+                <li>Customer Focus</li>
+                <li>Innovation</li>
+                <li>Teamwork</li>
               </ul>
             </div>
           </div>
@@ -112,37 +112,37 @@ const Home = () => {
             <div className="division-card reveal">
               <div className="division-card-icon">🛎️</div>
               <h3>Hospitality Division</h3>
-              <p>Hotels and restaurant operations focused on elite guest experiences, culinary expertise, and quality services in Doha.</p>
+              <p>Hotels and restaurant operations focused on guest experience and service quality.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.05s' }}>
               <div className="division-card-icon">🏢</div>
               <h3>Real Estate Division</h3>
-              <p>Property leasing, sales, investment advisory, and highly dependable real estate support for residential and business needs.</p>
+              <p>Property leasing, sales, and practical real estate support for modern residential and business needs.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.1s' }}>
               <div className="division-card-icon">🏗️</div>
               <h3>Construction Division</h3>
-              <p>General contracting, fit-out works, structural and MEP technical project delivery for modern commercial and residential needs.</p>
+              <p>Contracting, fit-out works, and technical project delivery for commercial and residential needs.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.15s' }}>
               <div className="division-card-icon">🎉</div>
               <h3>Events Division</h3>
-              <p>Wedding planning, luxury corporate events, and bespoke social celebrations executed with high creative precision.</p>
+              <p>Wedding planning, corporate events, and social celebrations with structured execution.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.2s' }}>
               <div className="division-card-icon">🧹</div>
               <h3>Services Division</h3>
-              <p>Residential, office, and hospitality support services delivered with dependable daily operations and certified professionals.</p>
+              <p>Residential, office, and hospitality support services delivered with dependable daily operations.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.25s' }}>
               <div className="division-card-icon">💻</div>
               <h3>Technology Division</h3>
-              <p>Software systems, digital data management, and custom business solutions that improve workflow and operational control.</p>
+              <p>Software systems and digital solutions that improve workflow and business efficiency.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.3s', gridColumn: 'span 1' }}>
               <div className="division-card-icon">🤖</div>
               <h3>AI Division</h3>
-              <p>Intelligent automation, systems engineering, AI communication tools, and data analytics built to automate modern business pipelines.</p>
+              <p>Intelligent automation and AI-driven systems for communication, workflow, and operations.</p>
             </div>
           </div>
           
@@ -164,7 +164,7 @@ const Home = () => {
           
           <div className="leadership-content reveal" style={{ transitionDelay: '0.15s' }}>
             <h2>Driven by Experienced Leadership</h2>
-            <p>NMJ Group continues to grow through disciplined leadership, strategic direction, and a strong focus on long-term value creation across all divisions, adhering to Qatar's National Vision 2030.</p>
+            <p>NMJ Group continues to grow through disciplined leadership, strategic direction, and a strong focus on long-term value creation across all divisions.</p>
             
             <div className="leadership-bullets">
               <div className="leadership-bullet-item">
@@ -181,7 +181,7 @@ const Home = () => {
               </div>
               <div className="leadership-bullet-item">
                 <div className="leadership-bullet-icon">✓</div>
-                <span>Commitment to Long-Term Value Creation</span>
+                <span>Commitment to Value Creation</span>
               </div>
             </div>
             
@@ -194,7 +194,6 @@ const Home = () => {
         <div className="container">
           <div className="section-header text-center reveal">
             <h2>Future Expansion Strategy</h2>
-            <p>Pioneering new development pathways and local integrations to continuously uplift Qatar's economic sectors.</p>
           </div>
           
           <div className="expansion-grid">
@@ -208,11 +207,11 @@ const Home = () => {
             </div>
             <div className="expansion-card reveal" style={{ transitionDelay: '0.1s' }}>
               <div className="expansion-icon">🏗️</div>
-              <h3>Construction & Events Growth</h3>
+              <h3>Construction and Events Growth</h3>
             </div>
             <div className="expansion-card reveal" style={{ transitionDelay: '0.15s' }}>
               <div className="expansion-icon">🤖</div>
-              <h3>Technology & AI Integration</h3>
+              <h3>Technology and AI Integration</h3>
             </div>
           </div>
         </div>
@@ -221,7 +220,7 @@ const Home = () => {
       <section className="cta-band">
         <div className="container cta-container reveal">
           <h2>Connect with NMJ Group</h2>
-          <p>For business inquiries, strategic partnerships, or general information, get in touch with our executive team in Doha, Qatar. We look forward to exploring collaborative opportunities.</p>
+          <p>For business inquiries, partnerships, or general information, contact our team in Doha, Qatar.</p>
           <div className="cta-actions">
             <Link to="/contact" className="btn btn-primary">Contact Us</Link>
             <a href="mailto:info@nmj-group.qa" className="btn btn-secondary">Email Us</a>

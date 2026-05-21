@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSiteContext } from '../context/SiteContext';
+import { Building2, Building, Coffee, Cpu, HardHat, MapPin, Briefcase, Layers, Eye, Rocket, Gem, PartyPopper, Sparkles, Laptop } from 'lucide-react';
 
 const Home = () => {
   const { siteData } = useSiteContext();
@@ -22,19 +23,19 @@ const Home = () => {
             <div className="hero-abstract-art">
               <div className="hero-doha-grid">
                 <div className="grid-block grid-block-span-2">
-                  <span className="block-icon">🏢</span>
+                  <span className="block-icon"><Building2 size={24} /></span>
                   <span className="block-label">Real Estate</span>
                 </div>
                 <div className="grid-block grid-block-row-span-2">
-                  <span className="block-icon">🛎️</span>
+                  <span className="block-icon"><Coffee size={24} /></span>
                   <span className="block-label">Hospitality</span>
                 </div>
                 <div className="grid-block">
-                  <span className="block-icon">🤖</span>
+                  <span className="block-icon"><Cpu size={24} /></span>
                   <span className="block-label">AI Systems</span>
                 </div>
                 <div className="grid-block grid-block-span-2">
-                  <span className="block-icon">🏗️</span>
+                  <span className="block-icon"><HardHat size={24} /></span>
                   <span className="block-label">Construction</span>
                 </div>
               </div>
@@ -47,21 +48,21 @@ const Home = () => {
         <div className="container">
           <div className="snapshot-grid">
             <div className="snapshot-card reveal">
-              <div className="snapshot-icon">📍</div>
+              <div className="snapshot-icon"><MapPin size={32} /></div>
               <div className="snapshot-info">
                 <h3>Headquarters</h3>
                 <p>Doha, Qatar</p>
               </div>
             </div>
             <div className="snapshot-card reveal" style={{ transitionDelay: '0.1s' }}>
-              <div className="snapshot-icon">💼</div>
+              <div className="snapshot-icon"><Briefcase size={32} /></div>
               <div className="snapshot-info">
                 <h3>Core Sectors</h3>
                 <p style={{ fontSize: '0.9rem' }}>Hospitality, Real Estate, Construction, Events, Services, Technology, and AI</p>
               </div>
             </div>
             <div className="snapshot-card reveal" style={{ transitionDelay: '0.2s' }}>
-              <div className="snapshot-icon">⚙️</div>
+              <div className="snapshot-icon"><Layers size={32} /></div>
               <div className="snapshot-info">
                 <h3>Business Units</h3>
                 <p>8 Specialized Divisions</p>
@@ -80,15 +81,15 @@ const Home = () => {
           
           <div className="identity-grid">
             <div className="identity-card reveal">
-              <h3><span>👁️</span> Vision</h3>
+              <h3><Eye size={20} style={{ marginRight: '8px', color: 'var(--primary-color)' }} /> Vision</h3>
               <p>To be a leading diversified group in Qatar and the region.</p>
             </div>
             <div className="identity-card reveal" style={{ transitionDelay: '0.1s' }}>
-              <h3><span>🚀</span> Mission</h3>
+              <h3><Rocket size={20} style={{ marginRight: '8px', color: 'var(--primary-color)' }} /> Mission</h3>
               <p>To deliver high-quality services and innovative solutions across our business sectors.</p>
             </div>
             <div className="identity-card reveal" style={{ transitionDelay: '0.2s' }}>
-              <h3><span>💎</span> Core Values</h3>
+              <h3><Gem size={20} style={{ marginRight: '8px', color: 'var(--primary-color)' }} /> Core Values</h3>
               <ul>
                 <li>Integrity</li>
                 <li>Excellence</li>
@@ -110,37 +111,37 @@ const Home = () => {
           
           <div className="divisions-grid">
             <div className="division-card reveal">
-              <div className="division-card-icon">🛎️</div>
+              <div className="division-card-icon"><Coffee size={36} strokeWidth={1.5} /></div>
               <h3>Hospitality Division</h3>
               <p>Hotels and restaurant operations focused on guest experience and service quality.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.05s' }}>
-              <div className="division-card-icon">🏢</div>
+              <div className="division-card-icon"><Building size={36} strokeWidth={1.5} /></div>
               <h3>Real Estate Division</h3>
               <p>Property leasing, sales, and practical real estate support for modern residential and business needs.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.1s' }}>
-              <div className="division-card-icon">🏗️</div>
+              <div className="division-card-icon"><HardHat size={36} strokeWidth={1.5} /></div>
               <h3>Construction Division</h3>
               <p>Contracting, fit-out works, and technical project delivery for commercial and residential needs.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.15s' }}>
-              <div className="division-card-icon">🎉</div>
+              <div className="division-card-icon"><PartyPopper size={36} strokeWidth={1.5} /></div>
               <h3>Events Division</h3>
               <p>Wedding planning, corporate events, and social celebrations with structured execution.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.2s' }}>
-              <div className="division-card-icon">🧹</div>
+              <div className="division-card-icon"><Sparkles size={36} strokeWidth={1.5} /></div>
               <h3>Services Division</h3>
               <p>Residential, office, and hospitality support services delivered with dependable daily operations.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.25s' }}>
-              <div className="division-card-icon">💻</div>
+              <div className="division-card-icon"><Laptop size={36} strokeWidth={1.5} /></div>
               <h3>Technology Division</h3>
               <p>Software systems and digital solutions that improve workflow and business efficiency.</p>
             </div>
             <div className="division-card reveal" style={{ transitionDelay: '0.3s', gridColumn: 'span 1' }}>
-              <div className="division-card-icon">🤖</div>
+              <div className="division-card-icon"><Cpu size={36} strokeWidth={1.5} /></div>
               <h3>AI Division</h3>
               <p>Intelligent automation and AI-driven systems for communication, workflow, and operations.</p>
             </div>
@@ -198,19 +199,19 @@ const Home = () => {
           
           <div className="expansion-grid">
             <div className="expansion-card reveal">
-              <div className="expansion-icon">🛎️</div>
+              <div className="expansion-icon"><Coffee size={32} strokeWidth={1.5} /></div>
               <h3>Hospitality Expansion</h3>
             </div>
             <div className="expansion-card reveal" style={{ transitionDelay: '0.05s' }}>
-              <div className="expansion-icon">🏢</div>
+              <div className="expansion-icon"><Building size={32} strokeWidth={1.5} /></div>
               <h3>Real Estate Development</h3>
             </div>
             <div className="expansion-card reveal" style={{ transitionDelay: '0.1s' }}>
-              <div className="expansion-icon">🏗️</div>
+              <div className="expansion-icon"><HardHat size={32} strokeWidth={1.5} /></div>
               <h3>Construction and Events Growth</h3>
             </div>
             <div className="expansion-card reveal" style={{ transitionDelay: '0.15s' }}>
-              <div className="expansion-icon">🤖</div>
+              <div className="expansion-icon"><Cpu size={32} strokeWidth={1.5} /></div>
               <h3>Technology and AI Integration</h3>
             </div>
           </div>

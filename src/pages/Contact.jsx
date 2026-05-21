@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSiteContext } from '../context/SiteContext';
+import { MapPin, Phone, Mail, Link as LinkIcon } from 'lucide-react';
 
 const Contact = () => {
   const { siteData, addMessage } = useSiteContext();
@@ -55,25 +56,25 @@ const Contact = () => {
           
           <div className="contact-info-grid">
             <a href="https://maps.app.goo.gl/NuSF7L8Y9TWVDGW17" target="_blank" rel="noopener noreferrer" className="contact-card reveal">
-              <div className="contact-card-icon">📍</div>
+              <div className="contact-card-icon"><MapPin size={28} /></div>
               <h3>Location</h3>
               <p>Al Muftah Plaza, Al Rayyan Road, PO Box 8113, Doha, Qatar</p>
             </a>
             
             <a href="tel:+97444440085" className="contact-card reveal" style={{ transitionDelay: '0.05s' }}>
-              <div className="contact-card-icon">📞</div>
+              <div className="contact-card-icon"><Phone size={28} /></div>
               <h3>Phone</h3>
               <p>+974 4444 0085</p>
             </a>
             
             <a href="mailto:info@nmj-group.qa" className="contact-card reveal" style={{ transitionDelay: '0.1s' }}>
-              <div className="contact-card-icon">✉️</div>
+              <div className="contact-card-icon"><Mail size={28} /></div>
               <h3>Email</h3>
               <p>info@nmj-group.qa</p>
             </a>
             
             <a href="https://www.linkedin.com/company/nmj-qatar" target="_blank" rel="noopener noreferrer" className="contact-card reveal" style={{ transitionDelay: '0.15s' }}>
-              <div className="contact-card-icon">🔗</div>
+              <div className="contact-card-icon"><LinkIcon size={28} /></div>
               <h3>LinkedIn</h3>
               <p>NMJ Group Profile</p>
             </a>
@@ -148,7 +149,7 @@ const Contact = () => {
           <div className="map-wrapper reveal">
             <a href="https://maps.app.goo.gl/NuSF7L8Y9TWVDGW17" target="_blank" rel="noopener noreferrer" className="map-placeholder">
               <div className="map-doha-grid"></div>
-              <div className="map-pin">📍</div>
+              <div className="map-pin"><MapPin size={48} color="#ef4444" /></div>
               <div className="map-info">
                 <h3>NMJ Group Headquarters</h3>
                 <p>Al Muftah Plaza, Al Rayyan Road, Doha, Qatar</p>

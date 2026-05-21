@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSiteContext } from '../context/SiteContext';
+import { Building, Coffee, Cpu, HardHat, MapPin, Phone, Mail, Globe, PartyPopper, Sparkles, Laptop } from 'lucide-react';
 
 const Divisions = () => {
   const { siteData } = useSiteContext();
@@ -51,7 +52,7 @@ const Divisions = () => {
           {isVisible('hospitality') && (
             <div className="division-section reveal active" id="hospitality" style={{ display: 'flex', flexDirection: 'column', gap: '30px', marginBottom: '60px' }}>
               <div className="division-header-block">
-                <h2><span>🛎️</span> Hospitality & Dining Division</h2>
+                <h2><Coffee size={36} /> Hospitality & Dining Division</h2>
                 <p className="division-intro">Premium hotel and restaurant operations focused on elite guest experiences and culinary excellence in Doha.</p>
               </div>
               
@@ -64,20 +65,20 @@ const Divisions = () => {
                   <p className="company-card-text">A distinguished 4-star luxury hotel offering exquisite rooms, fine dining, premium banquet halls, fitness center, and modern executive meeting facilities.</p>
                   <div className="company-details-list">
                     <div className="company-detail-item">
-                      <span className="company-detail-icon">📍</span>
+                      <MapPin size={18} className="company-detail-icon" />
                       <span>Al Rayyan Road, Doha, Qatar</span>
                     </div>
                     <div className="company-detail-item">
-                      <span className="company-detail-icon">📞</span>
+                      <Phone size={18} className="company-detail-icon" />
                       <span>+974 4033 7000</span>
                     </div>
                     <div className="company-detail-item">
-                      <span className="company-detail-icon">✉️</span>
+                      <Mail size={18} className="company-detail-icon" />
                       <span>info@sapphire-hotels.com</span>
                     </div>
                   </div>
                   <div className="company-card-links">
-                    <a href="https://sapphire-hotels.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                    <a href="https://sapphire-hotels.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}><Globe size={16} /> Visit Website &rarr;</a>
                   </div>
                 </div>
 
@@ -89,12 +90,12 @@ const Divisions = () => {
                   <p className="company-card-text">An upscale dining experience offering the finest cuts of meat, expertly prepared and served in a luxurious ambiance.</p>
                   <div className="company-details-list">
                     <div className="company-detail-item">
-                      <span className="company-detail-icon">📍</span>
+                      <MapPin size={18} className="company-detail-icon" />
                       <span>Doha, Qatar</span>
                     </div>
                   </div>
                   <div className="company-card-links">
-                    <a href="https://steaktown.qa/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                    <a href="https://steaktown.qa/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}><Globe size={16} /> Visit Website &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -105,7 +106,7 @@ const Divisions = () => {
           {isVisible('realestate') && (
             <div className="division-section reveal active" id="realestate" style={{ display: 'flex', flexDirection: 'column', gap: '30px', marginBottom: '60px' }}>
               <div className="division-header-block">
-                <h2><span>🏢</span> Real Estate Division</h2>
+                <h2><Building size={36} /> Real Estate Division</h2>
                 <p className="division-intro">Comprehensive property management, leasing, and real estate advisory services.</p>
               </div>
               
@@ -125,7 +126,7 @@ const Divisions = () => {
           {isVisible('construction') && (
             <div className="division-section reveal active" id="construction" style={{ display: 'flex', flexDirection: 'column', gap: '30px', marginBottom: '60px' }}>
               <div className="division-header-block">
-                <h2><span>🏗️</span> Construction Division</h2>
+                <h2><HardHat size={36} /> Construction Division</h2>
                 <p className="division-intro">General contracting, fit-out works, structural and MEP technical project delivery.</p>
               </div>
               
@@ -137,7 +138,7 @@ const Divisions = () => {
                   </div>
                   <p className="company-card-text">Delivering high-quality construction projects, structural development, and reliable engineering solutions for commercial and residential needs.</p>
                   <div className="company-card-links">
-                    <a href="https://alemara.qa/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                    <a href="https://alemara.qa/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}><Globe size={16} /> Visit Website &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -148,7 +149,7 @@ const Divisions = () => {
           {isVisible('events') && (
             <div className="division-section reveal active" id="events" style={{ display: 'flex', flexDirection: 'column', gap: '30px', marginBottom: '60px' }}>
               <div className="division-header-block">
-                <h2><span>🎉</span> Events Division</h2>
+                <h2><PartyPopper size={36} /> Events Division</h2>
                 <p className="division-intro">Bespoke wedding planning, corporate event management, and luxury celebrations.</p>
               </div>
               
@@ -160,7 +161,7 @@ const Divisions = () => {
                   </div>
                   <p className="company-card-text">Executing unforgettable weddings and luxury corporate events with high creative precision, elegant designs, and seamless logistics.</p>
                   <div className="company-card-links">
-                    <a href="https://alanaka.qa/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                    <a href="https://alanaka.qa/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}><Globe size={16} /> Visit Website &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -171,7 +172,7 @@ const Divisions = () => {
           {isVisible('services') && (
             <div className="division-section reveal active" id="services" style={{ display: 'flex', flexDirection: 'column', gap: '30px', marginBottom: '60px' }}>
               <div className="division-header-block">
-                <h2><span>🧹</span> Services Division</h2>
+                <h2><Sparkles size={36} /> Services Division</h2>
                 <p className="division-intro">Professional cleaning and support services delivered with dependable daily operations.</p>
               </div>
               
@@ -183,7 +184,7 @@ const Divisions = () => {
                   </div>
                   <p className="company-card-text">Providing certified professionals for residential, office, and hospitality cleaning solutions, ensuring hygiene and dependable service.</p>
                   <div className="company-card-links">
-                    <a href="https://dania-maids.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                    <a href="https://dania-maids.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}><Globe size={16} /> Visit Website &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -194,7 +195,7 @@ const Divisions = () => {
           {isVisible('technology') && (
             <div className="division-section reveal active" id="technology" style={{ display: 'flex', flexDirection: 'column', gap: '30px', marginBottom: '60px' }}>
               <div className="division-header-block">
-                <h2><span>💻</span> Technology Division</h2>
+                <h2><Laptop size={36} /> Technology Division</h2>
                 <p className="division-intro">Pioneering software engineering, enterprise cloud architectures, and digital transformation.</p>
               </div>
               <div className="company-cards-grid" style={{ gridTemplateColumns: '1fr' }}>
@@ -205,7 +206,7 @@ const Divisions = () => {
                   </div>
                   <p className="company-card-text">Specialized in digital database management systems, customized SaaS platforms, deep data security protocols, workflow automation, and custom corporate software solutions.</p>
                   <div className="company-card-links">
-                    <a href="https://nexitglobal.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                    <a href="https://nexitglobal.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}><Globe size={16} /> Visit Website &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -216,7 +217,7 @@ const Divisions = () => {
           {isVisible('ai') && (
             <div className="division-section reveal active" id="ai" style={{ display: 'flex', flexDirection: 'column', gap: '30px', marginBottom: '60px' }}>
               <div className="division-header-block">
-                <h2><span>🤖</span> AI Systems Division</h2>
+                <h2><Cpu size={36} /> AI Systems Division</h2>
                 <p className="division-intro">Intelligent automation, systems engineering, and data analytics built to automate modern business pipelines.</p>
               </div>
               <div className="company-cards-grid" style={{ gridTemplateColumns: '1fr' }}>
@@ -227,7 +228,7 @@ const Divisions = () => {
                   </div>
                   <p className="company-card-text">Delivering next-generation AI-powered operational solutions, predictive analytics, and automated decision-making frameworks to maximize corporate efficiency.</p>
                   <div className="company-card-links">
-                    <a href="https://fivenodes.ai/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                    <a href="https://fivenodes.ai/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}><Globe size={16} /> Visit Website &rarr;</a>
                   </div>
                 </div>
               </div>

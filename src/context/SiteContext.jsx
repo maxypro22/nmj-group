@@ -3,10 +3,10 @@ import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 const defaultContent = {
   theme: {
-    primaryColor: '#1e3e62',
-    accentColor: '#d6a354',
-    bgColor: '#ffffff',
-    textColor: '#0b192c',
+    primaryColor: '#0F172A',
+    accentColor: '#0F172A',
+    bgColor: '#FFFFFF',
+    textColor: '#1E293B',
   },
   home: {
     heroH1: "NMJ Group: Delivering Excellence Across Diversified Industries",

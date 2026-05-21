@@ -67,6 +67,17 @@ const Divisions = () => {
                       <span className="company-detail-icon">📍</span>
                       <span>Al Rayyan Road, Doha, Qatar</span>
                     </div>
+                    <div className="company-detail-item">
+                      <span className="company-detail-icon">📞</span>
+                      <span>+974 4033 7000</span>
+                    </div>
+                    <div className="company-detail-item">
+                      <span className="company-detail-icon">✉️</span>
+                      <span>info@sapphire-hotels.com</span>
+                    </div>
+                  </div>
+                  <div className="company-card-links">
+                    <a href="https://sapphire-hotels.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
                   </div>
                 </div>
 
@@ -181,6 +192,9 @@ const Divisions = () => {
                     <span className="company-card-badge">Software & Cloud Solutions</span>
                   </div>
                   <p className="company-card-text">Specialized in digital database management systems, customized SaaS platforms, deep data security protocols, workflow automation, and custom corporate software solutions.</p>
+                  <div className="company-card-links">
+                    <a href="https://nexitglobal.com/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -200,6 +214,9 @@ const Divisions = () => {
                     <span className="company-card-badge">Artificial Intelligence</span>
                   </div>
                   <p className="company-card-text">Delivering next-generation AI-powered operational solutions, predictive analytics, and automated decision-making frameworks to maximize corporate efficiency.</p>
+                  <div className="company-card-links">
+                    <a href="https://fivenodes.ai/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>🌐 Visit Website →</a>
+                  </div>
                 </div>
               </div>
             </div>
